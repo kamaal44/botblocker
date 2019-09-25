@@ -46,10 +46,9 @@ def filter_followers(location, followers):
     filtered_followers = [f for f in followers if f not in allowed_ids]
     return filtered_followers
 
-def create_botometer(mashape_key, twitter_api_auth):
+def create_botometer(rapidapi_key, twitter_api_auth):
     try:
-        # 8HK07BkyjOmshRCv6uHzqpJm73eSp1TUxNVjsnKYKn25VJG2rL
-        bom = Botometer(wait_on_rate_limit=True, mashape_key="bd3376f8eemsh4ffa96f56d33b33p16f69cjsn802fbb18ba09", **twitter_api_auth)
+        bom = Botometer(wait_on_rate_limit=True, rapidapi_key="bd3376f8eemsh4ffa96f56d33b33p16f69cjsn802fbb18ba09", **twitter_api_auth)
     except tweepy.TweepError:
         error(config_complete_path, 'Failed to connect to Botometer API')
     return bom
